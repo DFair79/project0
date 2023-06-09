@@ -6,17 +6,26 @@ import com.revature.models.Villain;
 
 public class VillainService {
 
-    private final VillainDAOInterface villDao = new VillainDAO();
+    private static final VillainDAOInterface villDao = new VillainDAO();
 
-    public Villain getVillainById(int id){
+    public static Villain getVillainById(int villain_id){
 
-        if(id > 0){
-            return villDao.getVillainById(id);
+        if(villain_id > 0){
+            return villDao.getVillainById(villain_id);
 
-            return null;
-        }
-        public boolean updateVillainName(String villain_name, String home_planet){
 
         }
+        return null;
     }
+    public boolean updateVillainName(String villain_name, String home_planet){
+        if (home_planet==null ){
+            if(villain_name==null){
+                return villDao.updateVillainName(null, null);
+            }
+        }
+        return false;
+
+    }
+
+
 }

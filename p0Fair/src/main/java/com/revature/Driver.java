@@ -1,8 +1,9 @@
-package com.revature.utils;
+package com.revature;
 
-import io.javalin.Javalin;
+import com.revature.utils.JavalinAppConfig;
 
 public class Driver {
+
     public static void main(String[] args) {
         JavalinAppConfig app = new JavalinAppConfig();
 
