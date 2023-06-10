@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d2798577-ac03-4865-a7fa-5d561abed6f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/p0Fair/src/main/java/com/revature/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p0Fair/p0Fair.iml" beforeDir="false" afterPath="$PROJECT_DIR$/p0Fair/p0Fair.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p0Fair/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/p0Fair/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p0Fair/src/main/java/com/revature/utils/ConnectionUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/p0Fair/src/main/java/com/revature/utils/ConnectionUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p0Fair/src/main/java/com/revature/utils/JavalinAppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/p0Fair/src/main/java/com/revature/utils/JavalinAppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p0Fair/target/classes/com/revature/utils/ConnectionUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/p0Fair/target/classes/com/revature/utils/ConnectionUtil.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2QyqxVOEilkKROoJYhiJTvu2D44" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Daryl Fair/OneDrive/Revaturework/dfair_revature/dfair_projects/project0/p0Fair"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d2798577-ac03-4865-a7fa-5d561abed6f3" name="Changes" comment="" />
+      <created>1686336416755</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686336416755</updated>
+    </task>
+    <servers />
+  </component>
+</project>

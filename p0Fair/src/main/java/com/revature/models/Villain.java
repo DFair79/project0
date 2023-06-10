@@ -6,6 +6,7 @@ public class Villain {
     private String home_planet;
 
     public Villain() {
+
     }
 
     public Villain(int villain_id, String villain_name, String home_planet) {

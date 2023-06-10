@@ -1,31 +1,23 @@
 package com.revature.service;
 
+import com.revature.daos.SuperCharacterDAO;
+import com.revature.daos.SuperCharacterDAOInterface;
 import com.revature.daos.VillainDAO;
 import com.revature.daos.VillainDAOInterface;
+import com.revature.models.SuperCharacter;
 import com.revature.models.Villain;
+import io.javalin.http.Context;
+
+import java.util.ArrayList;
 
 public class VillainService {
+    private static final VillainDAOInterface villainDAO = new VillainDAO();
 
-    private static final VillainDAOInterface villDao = new VillainDAO();
-
-    public static Villain getVillainById(int villain_id){
-
-        if(villain_id > 0){
-            return villDao.getVillainById(villain_id);
-
-
-        }
-        return null;
+    public static ArrayList<Villain>getAllVillains(){
+        return villainDAO.getAllVillains();
     }
-    public boolean updateVillainName(String villain_name, String home_planet){
-        if (home_planet==null ){
-            if(villain_name==null){
-                return villDao.updateVillainName(null, null);
-            }
-        }
-        return false;
-
+    public static Villain insertVillain(Villain villain){
+        return villainDAO.insertVillain(villain);
     }
-
 
 }

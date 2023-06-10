@@ -10,4 +10,11 @@ public interface SuperCharacterDAOInterface {
 
 
     SuperCharacter insertSuperCharacter(SuperCharacter sch);
+
+    SuperCharacter updateSuperCharacter(SuperCharacter superCharacter);
+
+    SuperCharacter deleteSuperCharacter(SuperCharacter delSuper);
+
+
+//    SuperCharacter retrieveSuperCharacter(SuperCharacter superChar);
 }

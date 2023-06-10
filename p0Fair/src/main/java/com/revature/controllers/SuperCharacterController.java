@@ -36,9 +36,27 @@ public class SuperCharacterController {
         ctx.status(405);
     }
     public void handleUpdate(Context ctx){
-        ctx.status(405);
+        SuperCharacter supercharUP = ctx.bodyAsClass(SuperCharacter.class);
+
+        SuperCharacter updateChar = SuperCharacterService.updateSuperCharacter(supercharUP);
+
+        if(updateChar != null){
+            ctx.status(200);
+            ctx.json(updateChar);
+        }else{
+            ctx.status(400);
+        }
+
     }
     public void handleDelete(Context ctx){
-        ctx.status(405);
+        SuperCharacter deleteSuper = ctx.bodyAsClass(SuperCharacter.class);
+        SuperCharacter deleteChar = SuperCharacterService.deleteSuperCharacter(deleteSuper);
+
+        if(deleteChar!=null){
+            ctx.status(200);
+            ctx.json(deleteChar);
+        }else {
+            ctx.status(400);
+        }
     }
 }

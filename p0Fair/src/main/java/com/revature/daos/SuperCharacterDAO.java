@@ -35,7 +35,7 @@ public class SuperCharacterDAO implements SuperCharacterDAOInterface{
                     rs.getInt("character_id"),
                     rs.getString("character_name"),
                     rs.getString("home_planet"),
-                    vDAO.getVillainById(rs.getInt("villain_id"))
+                    vDAO.getVillainById(rs.getInt("villain_id_fk"))
             );
             sclist.add(supcharacter);
         }
@@ -69,4 +69,50 @@ public class SuperCharacterDAO implements SuperCharacterDAOInterface{
 
         return null;
     }
-}
+
+    @Override
+    public SuperCharacter updateSuperCharacter(SuperCharacter superCharacter) {
+        try (Connection conn = ConnectionUtil.getConnection()) {
+
+            String updateSuper = "Update  supercharacters Set character_name=?, home_planet=?, villain_id_fk=? Where character_id=?";
+
+            PreparedStatement us = conn.prepareStatement(updateSuper);
+
+            us.setString(1, superCharacter.getCharacter_name());
+            us.setString(2, superCharacter.getHome_planet());
+            us.setInt(3, superCharacter.getVillain_id_fk());
+            us.setInt(4, superCharacter.getCharacter_id());
+
+            us.executeUpdate();
+            return superCharacter;
+        } catch (SQLException e) {
+            System.out.println("Update into supercharacter failed!");
+            e.printStackTrace();
+
+        }
+
+        return null;
+
+    }
+
+    @Override
+    public SuperCharacter deleteSuperCharacter(SuperCharacter delSuper) {
+        try (Connection conn = ConnectionUtil.getConnection()) {
+
+            String del = "Delete From supercharacters Where character_id=?";
+
+            PreparedStatement delSup = conn.prepareStatement(del);
+
+
+            delSup.setInt(1,delSuper.getCharacter_id());
+            delSup.executeUpdate();
+            return delSuper;
+        }catch (SQLException e) {
+            System.out.println("Delete from supercharacter failed!");
+            e.printStackTrace();
+        }
+            return null;
+        }
+    }
+
+

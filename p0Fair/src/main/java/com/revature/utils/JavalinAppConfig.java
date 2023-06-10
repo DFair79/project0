@@ -25,9 +25,9 @@ public class JavalinAppConfig {
 
 
         @Override
-        public String toJsonString(@NotNull Object obj, @NotNull Type type){
+        public String toJsonString(@NotNull Object obj, @NotNull Type targetType){
 
-            return gson.toJson(obj, type);
+            return gson.toJson(obj, targetType);
         }
 
         @Override
@@ -49,7 +49,7 @@ public class JavalinAppConfig {
             })
             .routes(()->{
                 path("supercharacters", () -> {
-                    get(superCharacterController::handleGetAll);
+                   get(superCharacterController::handleGetAll);
                     post(superCharacterController::handleCreate);
                     put(superCharacterController::handleUpdate);
                     delete(superCharacterController::handleDelete);
