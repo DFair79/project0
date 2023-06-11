@@ -1,12 +1,8 @@
 package com.revature.service;
 
-import com.revature.daos.SuperCharacterDAO;
-import com.revature.daos.SuperCharacterDAOInterface;
 import com.revature.daos.VillainDAO;
 import com.revature.daos.VillainDAOInterface;
-import com.revature.models.SuperCharacter;
 import com.revature.models.Villain;
-import io.javalin.http.Context;
 
 import java.util.ArrayList;
 
@@ -19,5 +15,15 @@ public class VillainService {
     public static Villain insertVillain(Villain villain){
         return villainDAO.insertVillain(villain);
     }
+    public static Villain updateVillain(Villain villain){
+        return villainDAO.updateVillain(villain);
+    }
 
+    public static Villain retrieveVillain(Villain getOneVillain) {
+        return villainDAO.retrieveVillain(getOneVillain);
+    }
+
+    public static Villain deleteVillain(Villain deleteVillain) {
+        return villainDAO.deleteVillain(deleteVillain);
+    }
 }

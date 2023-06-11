@@ -36,13 +36,39 @@ public class VillainController {
         }
 
         public void handleGetOne(Context ctx){
-            ctx.status(405);
+           Villain getOneVillain = ctx.bodyAsClass(Villain.class);
+            Villain theOneVill = VillainService.retrieveVillain(getOneVillain);
+            if (theOneVill != null){
+                ctx.status(201);
+                ctx.json(theOneVill);
+            }else {
+                ctx.status(400);
+            }
         }
         public void handleUpdate(Context ctx){
-            ctx.status(405);
+           Villain villain = ctx.bodyAsClass(Villain.class);
+
+           Villain updateVil = VillainService.updateVillain(villain);
+
+            if(updateVil != null){
+                ctx.status(200);
+                ctx.json(updateVil);
+            }else{
+                ctx.status(400);
+            }
+
+
         }
         public void handleDelete(Context ctx){
-            ctx.status(405);
+            Villain deleteVillain = ctx.bodyAsClass(Villain.class);
+            Villain deleteVill = VillainService.deleteVillain(deleteVillain);
+
+            if (deleteVill != null) {
+                ctx.status(200);
+                ctx.json(deleteVill);
+            } else {
+                ctx.status(400);
+            }
         }
 
     }

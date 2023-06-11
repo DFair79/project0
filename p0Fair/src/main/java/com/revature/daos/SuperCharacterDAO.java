@@ -113,6 +113,24 @@ public class SuperCharacterDAO implements SuperCharacterDAOInterface{
         }
             return null;
         }
+
+    @Override
+    public SuperCharacter retrieveSuperCharacter(SuperCharacter getOnesuperChar) {
+        try (Connection conn = ConnectionUtil.getConnection()){
+            String retrSupe = "Select From supercharacters Where character_name=?,home_planet=?";
+            PreparedStatement retSup = conn.prepareStatement(retrSupe);
+
+            retSup.setString(1,getOnesuperChar.getCharacter_name());
+            retSup.setString(2,getOnesuperChar.getHome_planet());
+
+            retSup.executeUpdate();
+            return getOnesuperChar;
+        }catch (SQLException e){
+            System.out.println("Get one supercharacter failed!");
+            e.printStackTrace();
+        }
+        return null;
     }
+}
 
 

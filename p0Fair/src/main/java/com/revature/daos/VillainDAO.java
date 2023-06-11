@@ -1,7 +1,6 @@
 package com.revature.daos;
 
 
-import com.revature.models.SuperCharacter;
 import com.revature.models.Villain;
 import com.revature.utils.ConnectionUtil;
 
@@ -93,7 +92,45 @@ public class VillainDAO implements VillainDAOInterface {
         return null;
 
     }
+
+    @Override
+    public Villain retrieveVillain(Villain getOneVillain) {
+        try (Connection conn = ConnectionUtil.getConnection()){
+            String retrVill = "Select From villains(villain_name,home_planet)";
+            PreparedStatement retVill = conn.prepareStatement(retrVill);
+            retVill.setString(1,getOneVillain.getVillain_name());
+            retVill.setString(2,getOneVillain.getVillain_name());
+            retVill.setString(3,getOneVillain.getHome_planet());
+
+            retVill.executeUpdate();
+            return getOneVillain;
+        }catch (SQLException e){
+            System.out.println("Get one villain failed!");
+            e.printStackTrace();
         }
+
+        return null;
+    }
+
+    @Override
+    public Villain deleteVillain(Villain deleteVillain) {
+        try (Connection conn = ConnectionUtil.getConnection()) {
+
+            String del = "Delete From villains Where character_id=?";
+
+            PreparedStatement delVill = conn.prepareStatement(del);
+
+
+            delVill.setInt(1,deleteVillain.getVillain_id());
+            delVill.executeUpdate();
+            return deleteVillain;
+        }catch (SQLException e) {
+            System.out.println("Delete from supercharacter failed!");
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
 
 
 

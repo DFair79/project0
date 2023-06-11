@@ -15,6 +15,8 @@ public interface SuperCharacterDAOInterface {
 
     SuperCharacter deleteSuperCharacter(SuperCharacter delSuper);
 
+    SuperCharacter retrieveSuperCharacter(SuperCharacter superChar);
+
 
 //    SuperCharacter retrieveSuperCharacter(SuperCharacter superChar);
 }

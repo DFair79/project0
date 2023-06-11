@@ -20,9 +20,9 @@ public class SuperCharacterService {
     public SuperCharacter insertSuperCharacter(SuperCharacter supercharacter){
         return superDAO.insertSuperCharacter(supercharacter);
     }
-//    public SuperCharacter retrieveSuperCharacter(SuperCharacter superChar){
-//        return superDAO.retrieveSuperCharacter(superChar);
-//    }
+    public SuperCharacter retrieveSuperCharacter(SuperCharacter superChar){
+        return superDAO.retrieveSuperCharacter(superChar);
+    }
     public static SuperCharacter deleteSuperCharacter(SuperCharacter supercharacter){
         return superDAO.deleteSuperCharacter(supercharacter);
     }

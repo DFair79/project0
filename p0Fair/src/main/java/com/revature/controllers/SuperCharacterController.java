@@ -33,7 +33,15 @@ public class SuperCharacterController {
     }
 
     public void handleGetOne(Context ctx){
-        ctx.status(405);
+        SuperCharacter getOneSuper = ctx.bodyAsClass(SuperCharacter.class);
+        SuperCharacter theOneSup = superCharacterService.retrieveSuperCharacter(getOneSuper);
+        if (theOneSup != null){
+            ctx.status(201);
+            ctx.json(theOneSup);
+        }else {
+            ctx.status(400);
+        }
+
     }
     public void handleUpdate(Context ctx){
         SuperCharacter supercharUP = ctx.bodyAsClass(SuperCharacter.class);
